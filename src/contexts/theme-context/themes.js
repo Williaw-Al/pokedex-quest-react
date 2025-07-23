@@ -7,7 +7,7 @@ export const themes = {
         toggleImagePosition: 'left',
         toggleOpacity: '0',
         toggleOpacity2: '100',
-        check: false,
+        check: 'false',
 
         cardBackground: 'red',
         cardBorder: 'orange',
@@ -21,7 +21,7 @@ export const themes = {
         toggleImagePosition: 'right',
         toggleOpacity: '100',
         toggleOpacity2: '0',
-        check: true,
+        check: 'true',
 
         cardBackground: 'blue',
         cardBorder: 'purple',

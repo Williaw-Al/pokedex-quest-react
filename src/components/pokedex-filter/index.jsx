@@ -1,26 +1,51 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { FilterTypeList } from "./style"
 import axios from "axios"
+import { FilterContext } from "../../contexts/filter-context"
 
 export const PokedexFilter = () => {
     const [typeList, setTypeList] = useState([])
+    const { filteredType, setFilteredType } = useContext(FilterContext)
 
     const getAllTypes = async () => {
         const response = await axios.get('https://pokeapi.co/api/v2/type/')
-        return response.data.results
+        const res = await response.data
+        return res
     }
 
-    setTypeList(getAllTypes)
+    const handleChange = (e) => {
+        setFilteredType(e.target.value)
+        alert(e.target.value)
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const types = await getAllTypes();
+            setTypeList(types.results)
+        }
+
+        fetchData()
+    }, []);
 
     return (
         <FilterTypeList>
-            {
-                typeList.map((id, type) => {
-                    return( 
-                        <li key={id}>{type.name}</li>
-                    )
-                })
-            }
+            <select name="" id="" onChange={handleChange} value={filteredType}>
+                <option value="">Selecione uma Opção</option>
+                {
+                    typeList.length > 1 ?
+                        typeList.map((type, index) => {
+
+                            return (
+                                <option key={index} value={type.name}>
+                                    {type.name}
+                                </option>
+                            )
+                        })
+                        : console.log('Nada Ocorreu')
+
+                }
+            </select>
+
         </FilterTypeList>
     )
 }

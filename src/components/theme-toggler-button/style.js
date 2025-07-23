@@ -26,7 +26,7 @@ export const InputCheck = styled.input`
 export const Img = styled.div`
     position: absolute;
     top: 0;
-    left: ${({toggler}) => toggler ? '64px' : '0px'};
+    left: ${({toggler}) => toggler == 'true' ? '64px' : '0px'};
 
     border: 2px solid #0ADB7B;
     border-radius: 50%;

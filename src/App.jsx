@@ -5,6 +5,7 @@ import { ThemeProvider } from "./contexts/theme-context/theme-context";
 import { GlobalStyle } from "./styles/global-style";
 import { HeaderBar } from "./components/header-bar";
 import { StorageProvider } from "./contexts/storage-context/storage-context";
+import { FilterProvider } from "./contexts/filter-context";
 
 function App() {
   const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <StorageProvider>
         <ThemeProvider>
+          <FilterProvider>
           <GlobalStyle />
           <BrowserRouter
                   future={{
@@ -23,6 +25,7 @@ function App() {
             <HeaderBar />
             <AppRoutes /> 
           </BrowserRouter>
+          </FilterProvider>
         </ThemeProvider>
       </StorageProvider>
     </QueryClientProvider>       
