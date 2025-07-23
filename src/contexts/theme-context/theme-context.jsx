@@ -1,27 +1,32 @@
 import { createContext, useState } from "react";
-import { ThemeProvider as StyledProvider } from 'styled-components'
-import { themes } from './themes'
+import { ThemeProvider as StyledProvider } from 'styled-components';
+import { themes } from './themes';
 
-export const ThemeContext = createContext()
+export const ThemeContext = createContext();
 
-const light = themes.light.name
-const dark = themes.dark.name
+export const ThemeProvider = ({ children }) => {
+    // Lê o tema salvo no localStorage, se houver
+    const savedThemeName = localStorage.getItem('theme');
 
-export const ThemeProvider = (props) => {
+    const getInitialTheme = () => {
+        if (savedThemeName === themes.light.name) return themes.light;
+        if (savedThemeName === themes.dark.name) return themes.dark;
+        return themes.light; // padrão: light
+    };
 
-    const [theme, setTheme] = useState(() => {
-        const localData = JSON.parse(localStorage.getItem('theme'));
+    const [theme, setTheme] = useState(getInitialTheme);
 
-        if (localData?.name === light) return themes.light
-        if (localData?.name === dark) return themes.dark
-        return themes.light
-    })
+    // Sempre que mudar o tema, salva no localStorage
+    const changeTheme = (newTheme) => {
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme.name);
+    };
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme: changeTheme }}>
             <StyledProvider theme={theme}>
-                {props.children}
+                {children}
             </StyledProvider>
         </ThemeContext.Provider>
-    )
-}
+    );
+};

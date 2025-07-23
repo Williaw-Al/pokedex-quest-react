@@ -6,7 +6,6 @@ export const Header = styled.header`
     justify-content: space-around;
     align-items: center;
 
-    width: 100vw;
     min-height: 100px;
     margin-bottom: 25px;
     background: linear-gradient(to top, #000000, #101010, #AC03FD);

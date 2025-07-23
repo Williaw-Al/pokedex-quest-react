@@ -4,13 +4,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "./contexts/theme-context/theme-context";
 import { GlobalStyle } from "./styles/global-style";
 import { HeaderBar } from "./components/header-bar";
+import { StorageProvider } from "./contexts/storage-context/storage-context";
 
 function App() {
   const queryClient = new QueryClient();
 
   return (
-    <>
+    
       <QueryClientProvider client={queryClient}>
+        <StorageProvider>
         <ThemeProvider>
           <GlobalStyle />
           <BrowserRouter
@@ -22,9 +24,9 @@ function App() {
             <AppRoutes /> 
           </BrowserRouter>
         </ThemeProvider>
-      </QueryClientProvider>
-    </>
-  )
+      </StorageProvider>
+    </QueryClientProvider>       
+ )
 }
 
 export default App
