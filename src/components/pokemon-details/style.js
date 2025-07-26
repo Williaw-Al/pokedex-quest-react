@@ -76,7 +76,7 @@ export const PokemonId = styled.div`
     font-size: 5.0rem;
 
     @media ${device.tablet}{
-        min-width: 300px;
+        max-width: 300px;
     }
 
 `
