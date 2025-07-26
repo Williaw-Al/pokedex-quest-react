@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         margin-bottom: 40px;
         color: ${props => props.theme.color};
+        font-size: 7rem;
     }
 
     a {

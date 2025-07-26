@@ -105,7 +105,7 @@ export const PokemonDetails = () => {
         return levelA - levelB;
     });
     console.log('sorted: ', sortedLevelUpSpells);
-    
+
     return (
         <Wrap>
             <InfoContainer>
@@ -117,7 +117,7 @@ export const PokemonDetails = () => {
                             </PokemonHeader>
                         </Link>
                     ) : (
-                        <PokemonHeader />
+                        <PokemonHeader>Primeiro Pokemon</PokemonHeader>
                     )
                     }
                     <PokemonId>
@@ -221,13 +221,14 @@ export const PokemonDetails = () => {
                     </div>
                 </PokemonInfo>
 
+                <Link to='/'>
+                    <Button>
+                        Voltar para o Home
+                    </Button>
+                </Link>
+
             </InfoContainer>
 
-            <Link to='/'>
-                <Button>
-                    Voltar para o Home
-                </Button>
-            </Link>
         </Wrap>
     )
 }

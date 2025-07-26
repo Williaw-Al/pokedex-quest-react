@@ -15,7 +15,6 @@ export const PokedexFilter = () => {
 
     const handleChange = (e) => {
         setFilteredType(e.target.value)
-        alert(e.target.value)
     }
 
     useEffect(() => {
@@ -29,7 +28,9 @@ export const PokedexFilter = () => {
 
     return (
         <FilterTypeList>
-            <select name="" id="" onChange={handleChange} value={filteredType}>
+            <h2>Filtre por tipo</h2>
+
+            <select onChange={handleChange} value={filteredType}>
                 <option value="">Selecione uma Opção</option>
                 {
                     typeList.length > 1 ?
@@ -44,6 +45,7 @@ export const PokedexFilter = () => {
                         : console.log('Nada Ocorreu')
 
                 }
+                <option value="">Todos</option>
             </select>
 
         </FilterTypeList>

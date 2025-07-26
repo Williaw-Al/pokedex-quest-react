@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
-export const FilterTypeList = styled.ul`
+export const FilterTypeList = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    font-size: 2rem;
 
     min-width: 300px;
     max-width: 1377px;

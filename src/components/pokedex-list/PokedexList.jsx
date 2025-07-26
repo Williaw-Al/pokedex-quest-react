@@ -5,6 +5,7 @@ import { Button } from "../button";
 import { List, PokemonCards } from "./style";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/filter-context";
+import { PokedexFilter } from "../pokedex-filter";
 
 export const PokedexList = ({ pokedexCards, onLoadMore, isFetching }) => {
   const { filteredType } = useContext(FilterContext)
@@ -24,6 +25,7 @@ export const PokedexList = ({ pokedexCards, onLoadMore, isFetching }) => {
             ))
         }
       </PokemonCards>
+      <PokedexFilter />
       <Button onClick={onLoadMore}>
         {isFetching ? "Carregando..." : "Carregar Mais Pokémon"}
       </Button>

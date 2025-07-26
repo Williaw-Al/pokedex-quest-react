@@ -54,15 +54,12 @@ export const PokedexListContainer = () => {
     if (list.isLoading && pokedexCards.length === 0)
         return <p>Carregando...</p>;
     if (list.isError) return <p>Um erro aconteceu</p>;
-    
+
     return (
-        <>
-            <PokedexFilter />
-            <PokedexList
-                pokedexCards={pokedexCards}
-                onLoadMore={handleLoadMore}
-                isFetching={list.isFetching}
-            />
-        </>
+        <PokedexList
+            pokedexCards={pokedexCards}
+            onLoadMore={handleLoadMore}
+            isFetching={list.isFetching}
+        />
     );
 };

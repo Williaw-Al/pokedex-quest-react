@@ -4,6 +4,7 @@ export const ThemeVisual = styled.div`
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     background-color: #E1B401;
     user-select: none;
@@ -20,6 +21,7 @@ export const ThemeVisual = styled.div`
 `
 
 export const InputCheck = styled.input`
+    position: absolute;
     appearance: none;
 `
 

@@ -7,10 +7,11 @@ export const Wrap = styled.main`
 
 export const InfoHeader = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 300px;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 20px;
 
     margin-bottom: 10px;
 `
@@ -43,7 +44,6 @@ export const InfoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 `
 export const PokemonId = styled.div`
     display: flex;
@@ -72,13 +72,16 @@ export const Number = styled.span`
 export const Name = styled.h1`
     font-family: ${font.title}, sans-serif;
     text-transform: uppercase;
+    hyphens: none;
 `
 
 export const PokemonInfo = styled.div`
     display: flex;
     gap: 15px;
+    margin-bottom: 20px;
 
     font-size: 3.5rem
+
 `
 
 export const CardContainer = styled.div`
@@ -208,10 +211,10 @@ export const Col2 = styled.col`
 
 export const AbilityDetails = styled.div`
     max-width: 500px;
-    height: ${({visible}) => visible ? 'fit-content' : '0'};
+    height: ${({ visible }) => visible ? 'fit-content' : '0'};
     margin-bottom: 10px;
-    padding: ${({visible}) => visible ? '10px' : '0'};
-    color: ${({visible}) => visible ? 'inherit' : 'transparent'};
+    padding: ${({ visible }) => visible ? '10px' : '0'};
+    color: ${({ visible }) => visible ? 'inherit' : 'transparent'};
     overflow: hidden;
 
     border: 2px solid aliceblue;
