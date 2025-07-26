@@ -35,7 +35,7 @@ import { Button } from "../button"
 export const PokemonDetails = () => {
 
     const [abilities, setAbilities] = useState([])
-    const [abilityDetailVisibility, setAbilityDetailVisibity] = useState(false)
+    const [abilityDetailVisibility, setAbilityDetailVisibity] = useState(undefined)
     const [abilityText, setAbilityText] = useState('')
     const [testando, setTestando] = useState([])
     // const [moves, setMoves] = useState([])
@@ -44,7 +44,7 @@ export const PokemonDetails = () => {
     const { id } = useParams()
 
     const getPokemon = async () => {
-        setAbilityDetailVisibity(false)
+        setAbilityDetailVisibity(undefined)
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
 
         const abilitiess = response.data.abilities.map(async (ability) => {
@@ -117,7 +117,7 @@ export const PokemonDetails = () => {
                             </PokemonHeader>
                         </Link>
                     ) : (
-                        <PokemonHeader>Primeiro Pokemon</PokemonHeader>
+                        <PokemonHeader>1º Pokemon</PokemonHeader>
                     )
                     }
                     <PokemonId>
@@ -163,12 +163,12 @@ export const PokemonDetails = () => {
                                             console.log('a array: ', teste);
 
                                             const result = teste.find(entry => entry.language.name === "en")
-                                            console.log(result);
+                                            
 
-                                            if (abilityText == result.effect && abilityDetailVisibility === true) {
-                                                setAbilityDetailVisibity(false)
+                                            if (abilityText == result.effect && abilityDetailVisibility === 'true') {
+                                                setAbilityDetailVisibity(undefined)
                                             } else {
-                                                setAbilityDetailVisibity(true)
+                                                setAbilityDetailVisibity('true')
                                             }
 
                                             setAbilityText(result.effect)

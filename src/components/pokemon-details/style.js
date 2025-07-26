@@ -1,8 +1,17 @@
 import styled from "styled-components";
 import { font } from '../../styles/generic-styles'
+import { device } from "../../styles/media-breakpoints";
+
 
 export const Wrap = styled.main`
-    min-width: 100vh;
+    min-height: 100vh;
+`
+
+export const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 export const InfoHeader = styled.div`
@@ -13,7 +22,14 @@ export const InfoHeader = styled.div`
     justify-content: center;
     gap: 20px;
 
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+
+    @media ${device.tablet}{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        gap: 10px;
+    }    
 `
 
 export const PokemonHeader = styled.button`
@@ -37,14 +53,12 @@ export const PokemonHeader = styled.button`
     &:hover {
         background-color: ${props => props.theme.cardBorder};
     }
+
+    @media ${device.tablet}{
+        width: 300px;
+    }
 `
 
-export const InfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`
 export const PokemonId = styled.div`
     display: flex;
     flex-direction: column;
@@ -59,9 +73,11 @@ export const PokemonId = styled.div`
                 0 0 0 3px aliceblue;
     background-color: ${props => props.theme.cardBackground};
 
-    margin-bottom: 20px;
-
     font-size: 5.0rem;
+
+    @media ${device.tablet}{
+        min-width: 300px;
+    }
 
 `
 
@@ -80,8 +96,16 @@ export const PokemonInfo = styled.div`
     gap: 15px;
     margin-bottom: 20px;
 
-    font-size: 3.5rem
+    font-size: 3.5rem;
 
+    @media ${device.tablet}{
+        flex-direction: column;
+        align-items: center;
+    }  
+
+    @media ${device.mobileM}{
+        padding: 10px;
+    }   
 `
 
 export const CardContainer = styled.div`
@@ -125,6 +149,11 @@ export const AbilitiesContainer = styled.div`
     width: 100%;
 
     margin-bottom: 10px;
+
+    @media ${device.mobileM}{
+        display: flex;
+        flex-direction: column;
+    }    
     `
 
 export const LevelSpellsContainer = styled.div`
@@ -138,6 +167,10 @@ export const LevelSpellsContainer = styled.div`
     box-shadow: 0 0 0 2px ${props => props.theme.cardBorder},
                 0 0 0 3px aliceblue;
     background-color: ${props => props.theme.cardBackground};
+
+    @media ${device.mobileM}{
+        width: 100%;
+    }   
 `
 
 export const InfoTitle = styled.h3`
@@ -187,7 +220,7 @@ export const Tr = styled.tr`
 `
 
 export const Th = styled.th`
-border: 1px solid #ccc;
+  border: 1px solid #ccc;
   padding: 8px;
   text-align: left;
 `
@@ -203,7 +236,7 @@ export const Td = styled.td`
 `
 
 export const Col1 = styled.col`
-    width: 10%;
+    width: 20%;
 `
 export const Col2 = styled.col`
     width: 60%;
@@ -225,26 +258,3 @@ export const AbilityDetails = styled.div`
 
     transition: height visibility ease-in-out 0.3s;
 `
-
-/* export const BackButton = styled.button`
-    width: 100%;
-    max-height: 100px;
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px 0;
-
-    border: 1px solid aliceblue;
-    border-radius: 15px 0px;
-    box-shadow: 0 0 0 2px ${props => props.theme.cardBorder},
-                0 0 0 3px aliceblue;
-    background-color: ${props => props.theme.cardBackground};
-
-    transition: all ease-in-out 0.3s;
-
-    &:hover {
-        background-color: ${props => props.theme.cardBorder};
-    }
-` */
