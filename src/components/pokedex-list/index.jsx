@@ -1,6 +1,5 @@
 // PokedexListContainer.jsx
-import React, { useState, useContext, useEffect } from "react";
-import { StorageContext } from "../../contexts/storage-context/storage-context";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { PokedexList } from "./PokedexList";
@@ -9,7 +8,6 @@ import { PokedexFilter } from "../pokedex-filter";
 export const PokedexListContainer = () => {
     const [pokedexCards, setPokedexCards] = useState([]);
     const [offset, setOffset] = useState(0);
-    const { storageVersion } = useContext(StorageContext);
     const storedList = +localStorage.getItem("pokemonList") || 0;
     const limit = 10 + storedList;
 
@@ -30,7 +28,7 @@ export const PokedexListContainer = () => {
     };
 
     const list = useQuery({
-        queryKey: ["pokemon", offset, limit, storageVersion],
+        queryKey: ["pokemon", offset, limit],
         queryFn: getPokemonProfile,
         refetchOnWindowFocus: false,
         refetchOnReconnect: false,
@@ -44,12 +42,6 @@ export const PokedexListContainer = () => {
         );
         setOffset((prev) => prev + limit);
     };
-
-    // Atualiza a lista quando storageVersion mudar (ex: localStorage limpo)
-    useEffect(() => {
-        setOffset(0);
-        list.refetch();
-    }, [storageVersion]);
 
     if (list.isLoading && pokedexCards.length === 0)
         return <p>Carregando...</p>;

@@ -33,7 +33,7 @@ export const ThemeTogglerButton = () => {
                 }} />
             <label htmlFor="teste">
                 <ThemeVisual>
-                    <Img toggler={theme.check}/>
+                    <Img $toggler={theme.check}/>
                     <Sunmode>Moonmode</Sunmode>
                     <Moonmode>Sunmode</Moonmode>
                 </ThemeVisual>

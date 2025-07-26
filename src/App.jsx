@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "./contexts/theme-context/theme-context";
 import { GlobalStyle } from "./styles/global-style";
 import { HeaderBar } from "./components/header-bar";
-import { StorageProvider } from "./contexts/storage-context/storage-context";
 import { FilterProvider } from "./contexts/filter-context";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
   return (
     
       <QueryClientProvider client={queryClient}>
-        <StorageProvider>
         <ThemeProvider>
           <FilterProvider>
           <GlobalStyle />
@@ -27,7 +25,6 @@ function App() {
           </BrowserRouter>
           </FilterProvider>
         </ThemeProvider>
-      </StorageProvider>
     </QueryClientProvider>       
  )
 }
