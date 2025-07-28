@@ -7,7 +7,7 @@ export const FilterProvider = (props) => {
 
     return (
         <FilterContext.Provider
-        value={{filteredType, setFilteredType}} >
+            value={{ filteredType, setFilteredType }} >
             {props.children}
         </FilterContext.Provider>
     )

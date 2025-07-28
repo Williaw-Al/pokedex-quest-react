@@ -1,5 +1,4 @@
-import React from "react";
-import {ToTopButton} from './style'
+import { ToTopButton } from './style'
 
 export const ScrollTopButton = () => {
   const scrollToTop = () => {

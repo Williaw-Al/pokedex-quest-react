@@ -1,5 +1,5 @@
 import { PokedexListContainer } from "../pokedex-list";
-import { Main, About } from './style'
+import { Main } from './style'
 
 export const HomePokedex = () => {
     try {

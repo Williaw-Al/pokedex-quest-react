@@ -2,12 +2,12 @@ import React, { useContext } from "react"
 import { themes } from "../../contexts/theme-context/themes"
 import { ThemeContext } from "../../contexts/theme-context/theme-context"
 
-import { 
+import {
     ThemeVisual,
     Img,
     Sunmode,
     Moonmode,
-    InputCheck 
+    InputCheck
 } from "./style"
 
 export const ThemeTogglerButton = () => {
@@ -33,7 +33,7 @@ export const ThemeTogglerButton = () => {
                 }} />
             <label htmlFor="teste">
                 <ThemeVisual>
-                    <Img $toggler={theme.check}/>
+                    <Img $toggler={theme.check} />
                     <Sunmode>Moonmode</Sunmode>
                     <Moonmode>Sunmode</Moonmode>
                 </ThemeVisual>

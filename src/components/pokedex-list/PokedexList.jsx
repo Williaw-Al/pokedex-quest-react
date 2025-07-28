@@ -1,5 +1,3 @@
-// PokedexListView.jsx
-import React from "react";
 import { PokemonCard } from "../pokemon-card";
 import { Button } from "../button";
 import { List, PokemonCards } from "./style";

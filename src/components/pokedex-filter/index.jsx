@@ -42,7 +42,7 @@ export const PokedexFilter = () => {
                                 </option>
                             )
                         })
-                        : console.log('Nada Ocorreu')
+                        : null
 
                 }
                 <option value="">Todos</option>

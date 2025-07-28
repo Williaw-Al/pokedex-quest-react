@@ -12,7 +12,7 @@ export const PokemonCard = ({ pokemon }) => {
     const pokemonId = padNumber(pokemon.id)
     const pokemonTypes = usePokemonTypes(pokemon)
     const spriteSource = pokemon.sprites.other['official-artwork'].front_default
-    
+
     return (
         <Link to={`/pokedex/${pokemon.id}`}>
             <CardContainer>

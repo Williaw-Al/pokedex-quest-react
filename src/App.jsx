@@ -10,23 +10,23 @@ function App() {
   const queryClient = new QueryClient();
 
   return (
-    
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
-          <FilterProvider>
+
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <FilterProvider>
           <GlobalStyle />
           <BrowserRouter
-                  future={{
-                      v7_startTransition: true,
-                      v7_relativeSplatPath: true,
-                  }}>
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+            }}>
             <HeaderBar />
-            <AppRoutes /> 
+            <AppRoutes />
           </BrowserRouter>
-          </FilterProvider>
-        </ThemeProvider>
-    </QueryClientProvider>       
- )
+        </FilterProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  )
 }
 
 export default App

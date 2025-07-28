@@ -1,15 +1,13 @@
-// PokedexListContainer.jsx
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { PokedexList } from "./PokedexList";
-import { PokedexFilter } from "../pokedex-filter";
 import { FilterContext } from "../../contexts/filter-context";
 
 export const PokedexListContainer = () => {
     const [pokedexCards, setPokedexCards] = useState([]);
     const [offset, setOffset] = useState(0);
-    const { filteredType, setFilteredType } = useContext(FilterContext)
+    const { setFilteredType } = useContext(FilterContext)
     const storedList = +localStorage.getItem("pokemonList") || 0;
     const limit = 10 + storedList;
 

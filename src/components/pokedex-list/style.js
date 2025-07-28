@@ -4,6 +4,7 @@ import { device } from "../../styles/media-breakpoints";
 export const List = styled.section`
 display: flex;
 flex-direction: column;
+padding: 10px;
 
 justify-content: center;
 align-items: center;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-export const usePokemonTypes = ( pokemon ) => {
+export const usePokemonTypes = (pokemon) => {
     const [typesList, setTypesList] = useState([])
 
     const getPokemonTypes = async () => {
@@ -10,7 +10,7 @@ export const usePokemonTypes = ( pokemon ) => {
 
             return response.data
         })
-        
+
         return types;
     }
 

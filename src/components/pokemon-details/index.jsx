@@ -37,9 +37,7 @@ export const PokemonDetails = () => {
     const [abilities, setAbilities] = useState([])
     const [abilityDetailVisibility, setAbilityDetailVisibity] = useState(undefined)
     const [abilityText, setAbilityText] = useState('')
-    const [testando, setTestando] = useState([])
-    // const [moves, setMoves] = useState([])
-    // const [name, setName] = useState('Olá')
+    const [typeVisual, setTypeVisual] = useState([])
 
     const { id } = useParams()
 
@@ -62,7 +60,7 @@ export const PokemonDetails = () => {
         })
 
         const typesPromises = await Promise.all(types)
-        setTestando(typesPromises)
+        setTypeVisual(typesPromises)
 
 
         return response.data
@@ -70,10 +68,7 @@ export const PokemonDetails = () => {
 
     const { data, isFetching, isError } = useQuery({
         queryKey: ['pakemon', id],
-        queryFn: getPokemon,
-        // refetchOnWindowFocus: false,
-        // refetchOnReconnect: false,
-        // refetchOnMount: false
+        queryFn: getPokemon
     })
 
     if (isFetching) return (
@@ -95,7 +90,6 @@ export const PokemonDetails = () => {
     let nextPokemon = data.id
     nextPokemon++
 
-    console.log('normal: ', levelUpSpells);
     const sortedLevelUpSpells = [...levelUpSpells].sort((a, b) => {
         const gameVersionA = a.version_group_details
         const levelA = gameVersionA[gameVersionA.length - 1].level_learned_at ?? Infinity;
@@ -104,7 +98,6 @@ export const PokemonDetails = () => {
         const levelB = gameVersionB[gameVersionB.length - 1].level_learned_at ?? Infinity;
         return levelA - levelB;
     });
-    console.log('sorted: ', sortedLevelUpSpells);
 
     return (
         <Wrap>
@@ -140,7 +133,7 @@ export const PokemonDetails = () => {
                         </Sprite>
                         <TypesContainer>
                             {
-                                testando.map((type, index) => {
+                                typeVisual.map((type, index) => {
                                     return (
                                         <div key={index}>
                                             <TypeImg src={type.sprites["generation-viii"]["brilliant-diamond-and-shining-pearl"].name_icon} alt={type.name} />
@@ -155,15 +148,13 @@ export const PokemonDetails = () => {
                         <InfoTitle>Lista de Habilidades</InfoTitle>
                         <AbilitiesContainer>
                             {abilities.map((ability, index) => {
-                                // console.log(ability);
                                 return (
                                     <Ability key={index}
                                         onClick={() => {
-                                            const teste = ability.effect_entries
-                                            console.log('a array: ', teste);
+                                            const abilityLanguages = ability.effect_entries
 
-                                            const result = teste.find(entry => entry.language.name === "en")
-                                            
+                                            const result = abilityLanguages.find(entry => entry.language.name === "en")
+
 
                                             if (abilityText == result.effect && abilityDetailVisibility === 'true') {
                                                 setAbilityDetailVisibity(undefined)

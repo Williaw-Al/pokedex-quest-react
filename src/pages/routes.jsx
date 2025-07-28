@@ -3,10 +3,10 @@ import { Home } from "./home";
 import { PokemonPage } from "./pokemon-page";
 
 const AppRoutes = () => (
-        <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/pokedex/:id" element={<PokemonPage />} />            
-        </Routes>
+    <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/pokedex/:id" element={<PokemonPage />} />
+    </Routes>
 );
 
 export { AppRoutes }
