@@ -9,8 +9,7 @@ export const FilterTypeList = styled.div`
     padding: 5px;
     font-size: 2rem;
 
-    min-width: 300px;
-    max-width: 1377px;
+    width: 100%;
     margin-bottom: 20px;
 
     border: 1px solid aliceblue;

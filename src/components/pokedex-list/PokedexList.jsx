@@ -14,6 +14,7 @@ export const PokedexList = ({ pokedexCards, onLoadMore, isFetching }) => {
 
   return (
     <List>
+      <PokedexFilter />
       <PokemonCards>
         {
           filteredType != '' ?
@@ -25,7 +26,6 @@ export const PokedexList = ({ pokedexCards, onLoadMore, isFetching }) => {
             ))
         }
       </PokemonCards>
-      <PokedexFilter />
       <Button onClick={onLoadMore}>
         {isFetching ? "Carregando..." : "Carregar Mais Pokémon"}
       </Button>
