@@ -21,7 +21,7 @@ export const HeaderBar = () => {
         <Header>
             <Link to='/' onClick={handleLogoClick}>
                 <Logo>
-                    <img src='/src/assets/images/pokemon-logo.png' alt='Logo do Pokémon' />
+                    <img src='/pokemon-logo.png' alt='Logo do Pokémon' />
                 </Logo>
             </Link>
             <ThemeDataErase />

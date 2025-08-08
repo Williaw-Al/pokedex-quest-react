@@ -3,7 +3,7 @@ export const themes = {
         name: 'light',
         color: '#eeeeee',
         background: '#eeeeee',
-        toggleImage: '/src/assets/icons/theme-light.png',
+        toggleImage: '/theme-light.png',
         toggleImagePosition: 'left',
         toggleOpacity: '0',
         toggleOpacity2: '100',
@@ -11,13 +11,13 @@ export const themes = {
 
         cardBackground: 'red',
         cardBorder: 'orange',
-        siteBackgroundImage: '/src/assets/images/sun-background.png'
+        siteBackgroundImage: '/sun-background.png'
     },
     dark: {
         name: 'dark',
         color: '#eeeeee',
         background: '#0a1f44',
-        toggleImage: '/src/assets/icons/theme-dark.png',
+        toggleImage: '/theme-dark.png',
         toggleImagePosition: 'right',
         toggleOpacity: '100',
         toggleOpacity2: '0',
@@ -25,6 +25,6 @@ export const themes = {
 
         cardBackground: 'blue',
         cardBorder: 'purple',
-        siteBackgroundImage: '/src/assets/images/moon-background.png'
+        siteBackgroundImage: '/moon-background.png'
     }
 }

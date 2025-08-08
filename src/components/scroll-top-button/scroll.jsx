@@ -10,7 +10,7 @@ export const ScrollTopButton = () => {
 
   return (
     <ToTopButton onClick={scrollToTop} title='Ir ao Topo'>
-      <img src="\src\assets\icons\top-arrow.png" alt="Ir pro Topo" />
+      <img src="/top-arrow.png" alt="Ir pro Topo" />
     </ToTopButton>
   );
 };
