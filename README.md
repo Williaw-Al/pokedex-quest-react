@@ -18,6 +18,8 @@ Criar uma **Home Page** de listagem de alguns pokemons, utilizando a api do **Po
 A home deve apresentar uma listagem com **10 pokemons iniciais**, com um botão **"Carregar mais"** abaixo dela, que busca mais 10 pokemons da API e adiciona na listagem atual.  
 ⚠️ Foi introduzido também, um **filtro** para os pokemon.
 
+![Imagem da página Home](./src/assets/readme-images/home-page-pokedex.png 'Home da Poxedex')
+
 Cada pokemon com sua **imagem e nome**, podendo ser **clicável**, levando o usuário para sua página, com os seguintes detalhes:
 
 - **Imagem do pokemon**
@@ -26,7 +28,11 @@ Cada pokemon com sua **imagem e nome**, podendo ser **clicável**, levando o usu
 - **Lista de habilidades do pokemon** (`abilities`): a lista de habilidades, com o nome e o texto descritivo da dela.
 - **Tipo do pokemon** (`type`)
 
-No topo da tela, um botão para **alternar de cor**, entre **tema claro e tema escuro** (`light/dark`).
+![Imagem dos detalhes dos Pokémon](./src/assets/readme-images/pokemon-details-page.png 'Página com os detalhes dos Pokémon')
+
+No topo da tela, um botão para **alternar de cor**, entre **tema claro e tema escuro** (`light/dark`). Ambos referenciando o jogo **Pokémon Sun and Moon**.
+
+![Mudança entre o modo claro e escuro](./src/assets/readme-images/modo-sol-lua.gif 'Mudança de modo entre sol e lua')
 
 ### ✅ Requisitos do desafio:
 
@@ -78,6 +84,8 @@ Facilitando o entendimento da página. Nem todos precisam saber que a logo faz a
 
 Como **primeiro projeto utilizando o React**, muito tempo foi gasto nos conceitos e prática.  
 Sempre que parava em algo, era uma luta para entender.
+
+Um dos exemplos era 💾 *como salvar dados no cache do usuário*, para o projeto utilizar informações como o tema escolhido e a quantidade de pokémon carregados no home. Então utilizei o **localstorage** pela primeira vez. A experiência foi interessante, e agora me sinto mais confortável para seu uso em futuros projetos.
 
 > 🔧 O cabeçalho já chegou a ser **móvel**, fixado na tela.  
 > Mas isso apresentou problemas para mim, principalmente no quesito de **design**, então optei por retirá-lo.
